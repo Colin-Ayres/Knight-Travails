@@ -1,12 +1,6 @@
 # dijkstra-knight-algo
 This project is an implementation of Dijkstra's algorithm which finds the shortest path a knight piece in chess can take from a defined start to finish.
 
-## Knights
-A Knight class defines our piece; knights are constrained such that they can only move once in one direction, and twice in the other direction. Each knight object is given a position and its possible moves are calculated from the moveset (move once in n direction, move twice in n-orthogonal direction) and included if they are still on the gameboard.
-
-## Gameboard
-The gameboard initializes the knight object, displays it for the user, and iniitializes itself as an 8 by 8 board, 0-indexed; 0 to 7 by 0 to 7.
-
 ## Dijkstra's Algorithm
 The algorithm for finding the shortest path works as the Wikipedia article describes it below. Assign a value of nil to each position on the board. Go through each feasible path and assign a number to each position on the board based on when you've visited it (1 is first visited, 2 if second visited) and it is lower than the current number assigned to it. Finally, iterate through the board to find the positions with the smallest numbers (smallest distances) and add their positions to the solutions array.
 
@@ -19,11 +13,19 @@ From Wikipedia:
 
 > This algorithm makes no attempt of direct "exploration" towards the destination as one might expect. Rather, the sole consideration in determining the next "current" intersection is its distance from the starting point. This algorithm therefore expands outward from the starting point, interactively considering every node that is closer in terms of shortest path distance until it reaches the destination. When understood in this way, it is clear how the algorithm necessarily finds the shortest path. However, it may also reveal one of the algorithm's weaknesses: its relative slowness in some topologies. 
 
+## Knights
+A Knight class defines our piece; knights are constrained such that they can only move once in one direction, and twice in the other direction. Each knight object is given a position and its possible moves are calculated from the moveset (move once in n direction, move twice in n-orthogonal direction) and included if they are still on the gameboard.
+
+## Gameboard
+The gameboard initializes the knight object, displays it for the user, and iniitializes itself as an 8 by 8 board, 0-indexed; 0 to 7 by 0 to 7.
+
 ## Directions
-To run this application, install ruby, navigate to the project's directory, and enter "ruby lib/main.rb"
+To run this application, install ruby, navigate to the project's directory, and use the command: 
+
+`ruby lib/main.rb`
 
 ## Demo
 ![image](https://user-images.githubusercontent.com/88121502/165214491-bbdd9d84-c86c-49a2-ae45-d9750d1e3437.png)
 
 ## Improvements
-You could more clearly show the path that the knight has taken by coloring in visited blocks.
+This type of algorithm could also be implemented for other chess pieces, and generalized to something even bigger than a 8x8 chess board. The path that the knight has taken could be more clearly shown by coloring in visited blocks.
